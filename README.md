@@ -38,18 +38,88 @@ Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
 
-**Procedure**
+FULL ADDER :
 
-Write the detailed procedure here
+
+![image](https://github.com/user-attachments/assets/14519c14-c1ed-41ab-8783-5fff6944c1a4)
+
+
+FULL SUBTRACTOR :
+
+
+![image](https://github.com/user-attachments/assets/6f8a9a73-b481-4eec-93bf-44bd71f92dc3)
+
+
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
 
-**RTL Schematic**
+Developed by: RegisterNumber:Aparna M(212223220008)*/
 
-**Output Timing Waveform**
+~~~ 
+ exp4a-full adder
+
+ *module exp4a(sum, cout, a, b, cin);*
+
+    output sum;
+    output cout;
+    input a;
+    input b;
+    input cin;
+
+	 wire w1,w2,w3;
+	 assign w1=a^b;
+	 assign w2=a&b;
+	 assign w3=w1&cin;
+	 assign sum=w1^cin;
+	 assign cout=w2|w3;
+endmodule
+
+Exp4b-full subtractor
+
+*module fullsub(df, bo, a, b, bin);*
+
+    output df;
+    output bo;
+    input a;
+    input b;
+    input bin;
+    
+	wire w1,w2,w3;
+	 assign w1=a^b;
+	 assign w2=(~a&b);
+	 assign w3=(~w1&bin);
+	 assign df=w1^bin;
+	 assign bo=w2|w3;
+
+endmodule
+
+~~~
+
+
+**RTL Schematic:**
+
+FULL ADDER :
+
+![gate](https://github.com/user-attachments/assets/7edf3d63-68ae-4e8e-a729-e18b2a0855b8)
+
+FULL SUBTRACTOR :
+
+![gate](https://github.com/user-attachments/assets/cbc417ac-a923-4b68-aadc-3b74cb6fbabe)
+
+
+
+**Output Timing Waveform:**
+
+FULL ADDER :
+
+![waveform](https://github.com/user-attachments/assets/d3b55b1b-1412-46c1-aebb-c578196069bf)
+
+FULL SUBTRACTOR :
+
+![waveform](https://github.com/user-attachments/assets/98608df1-7b92-4c5a-88f0-2e61531bacd4)
+
 
 **Result:**
 
